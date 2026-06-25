@@ -18,7 +18,9 @@
 
 ## 문서
 
-- 제품 스펙/결정 사항: `docs/ebike-healthcare-app-spec.md`
+- 문서 지도: [`docs/index.md`](docs/index.md)
+- 제품 스펙: [`docs/product-spec.md`](docs/product-spec.md)
+- 구현·설계: [`docs/implementation-design.md`](docs/implementation-design.md)
 
 ## 개발 상태
 
