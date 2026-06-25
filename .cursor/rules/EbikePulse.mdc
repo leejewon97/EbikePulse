@@ -20,6 +20,8 @@ alwaysApply: true
 - `docs/ebike-healthcare-app-spec.md`에는 아래 두 섹션을 유지한다.
   - **확정 사항**
   - **향후 계획**
+- UI/UX 설계는 `docs/ebike-healthcare-app-spec.md`의 **UI/UX 구체안 섹션**을 단일 소스로 따른다. (중복 기재 금지)
+- 권한/포그라운드 서비스 설계는 `docs/ebike-healthcare-app-spec.md`의 **권한/포그라운드 서비스 설계 섹션**을 단일 소스로 따른다. (중복 기재 금지)
 
 ## 3. 아키텍처 결정 (고정)
 
@@ -29,4 +31,24 @@ alwaysApply: true
 ## 4. 품질/운영 체크리스트(필독)
 
 - 자세한 “유의/해야/하지 말아야” 체크리스트는 `docs/ebike-healthcare-app-spec.md`의 **Android 중심 개발 가이드 섹션**을 단일 소스로 따른다. (중복 기재 금지)
+
+## 5. Git 커밋 규칙
+
+### 커밋 메시지 제안 (예: `커밋 메시지 작성해줘`)
+
+**`git commit` 하지 않음.** 제안만 한다.
+
+1. `git status` · `git diff` · `git log` — 변경 범위 확인; **`git log` 최근 메시지 톤·형식 참고**
+2. **제목:** commit 타입으로 시작 (add, fix, remove, feat, docs, style, refactor, test, chore), 마침표 없이 한 줄
+3. **본문:** (선택) 1~5문장 — 무엇을·왜 바꿨는지
+4. **한글로 작성할 것**
+
+### 커밋 실행 (키워드: `커밋하자` / `커밋해줘`)
+
+**명시할 때만** `git commit`. 메시지만 달라는 요청이면 위 **「커밋 메시지 제안」**만 따르고 커밋하지 말 것.
+
+1. `git status` · `git diff` · `git log` — **`git log`로 저장소 관례 확인**
+2. 관련 파일만 스테이징
+3. 메시지 작성 — 위 **「커밋 메시지 제안」**에서 메세지 작성을 했다면 그대로; 아니라면 위 **「커밋 메시지 제안」**의 메시지 규칙을 따라 작성할 것
+5. **`push`는 사용자 요청 시만**
 
