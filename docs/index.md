@@ -42,3 +42,11 @@
 
 - `.cursor/rules/karpathy-guidelines.mdc` — 불변 행동 가이드
 - `.cursor/rules/EbikePulse.mdc` — 프로젝트 전용 규칙 (위 문서 경로 참조)
+
+### Cursor AI 스킬 (명시 호출)
+
+| 스킬 | 용도 |
+|------|------|
+| `/docs-update` | `docs/` SSOT에 맞게 문서만 수정 |
+| `/commit-message` | 커밋 메시지 제안 (commit 안 함) |
+| `/commit-run` | 커밋 실행 (명시 요청 시, Agent 모드) |
