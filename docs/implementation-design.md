@@ -1,7 +1,7 @@
 # Ebike Pulse — 구현 및 설계
 
 > Android 구현 원칙, 권한/포그라운드 서비스, UI/UX 설계를 기록한다.  
-> 최종 갱신: 2026-06-25
+> 최종 갱신: 2026-06-29
 
 **문서 지도**: [index.md](index.md) · 제품 스펙: [product-spec.md](product-spec.md)
 
@@ -93,6 +93,16 @@
 - **State**: 권한 상태(Granted/Denied), 서비스 상태(Running/Stopped), 라이딩 상태(Idle/Recording/Paused/Stopping)
 
 이렇게 두면 “권한/서비스/설정 이동”이 UI 코드에 퍼지지 않고, 테스트 가능한 형태로 유지된다.
+
+### 2.5 MVI 코드 조직 (Contract)
+
+- feature당 `*Contract.kt`에 `UiState`, `Event`, `Effect` 타입을 둔다. (현재 예: `ui/ride/RideContract.kt`)
+- **초기·소규모 화면**은 Contract **한 파일**로 유지한다. 타입 수가 적을 때 파일을 미리 나누지 않는다.
+- 아래 **2개 이상** 해당되면 `*Event.kt`, `*Effect.kt` 등으로 **분리 검토**한다. (숫자는 가이드라인이며 절대 규칙이 아니다.)
+  - Contract가 읽기 불편할 정도로 길어짐 (대략 100줄 이상)
+  - `Event` 또는 `Effect` 항목이 많아짐 (대략 10개 전후)
+  - 한 종류 타입만 자주 수정하거나, 같은 파일에서 merge 충돌이 반복됨
+- 분리 시에도 §2.4의 **State/Event/Effect 개념 분리**는 유지한다. bootstrap 단계 번호와 무관하게 **필요할 때** 진행한다.
 
 ---
 

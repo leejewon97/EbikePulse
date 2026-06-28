@@ -1,6 +1,6 @@
 ---
 title: "EbikePulse 프로젝트 뼈대 생성 실행 계획"
-last_updated: "2026-06-26"
+last_updated: "2026-06-29"
 source_of_truth:
   product_spec: "docs/product-spec.md"
   implementation_design: "docs/implementation-design.md"
@@ -58,14 +58,14 @@ fixed_decisions:
 
 - **검증**: 5개 탭 전환이 되고, 각 화면에 placeholder UI가 보임
 
-### 2) MVI 최소 규율 도입(한 화면부터)
+### 2) MVI 최소 규율 도입(한 화면부터) ✅
 
-- [ ] 우선 **라이딩 화면 1곳에만** MVI 틀 적용
+- [x] 우선 **라이딩 화면 1곳에만** MVI 틀 적용
   - State: `Idle/Recording/Paused/Stopping` 등 최소
   - Event: `OnStartClicked/OnPauseClicked/OnStopClicked` 등
   - Effect: `RequestLocationPermission/StartRideService/StopRideService` 등
 
-- **검증**: 버튼 클릭 → ViewModel에서 State 변화 → UI 반영
+- **검증**: 버튼 클릭 → ViewModel에서 State 변화 → UI 반영 (`Recording` 시 가짜 타이머 증가, Effect는 Logcat만)
 
 ### 3) Hilt 세팅(전역 1회)
 
@@ -110,15 +110,17 @@ fixed_decisions:
 
 ## 예상 변경 지점(파일)
 
-- `app/build.gradle.kts`: 의존성(Hilt/Nav/Room/Location) 추가 — **0단계 완료**
+- `app/build.gradle.kts`: 의존성(Hilt/Nav/Room/Location) 추가 — **0단계 완료**; `lifecycle-viewmodel-compose` — **2단계 완료**
 - `gradle/libs.versions.toml`, `build.gradle.kts`: 버전 카탈로그·플러그인 — **0단계 완료**
+- `app/src/main/java/com/example/ebikepulse/navigation/`, `EbikePulseApp.kt`: 탭 IA — **1단계 완료**
+- `app/src/main/java/com/example/ebikepulse/ui/ride/`: `RideContract.kt`, `RideViewModel.kt`, `RideScreen.kt` — **2단계 완료**
 - `app/src/main/AndroidManifest.xml`: 권한/서비스 선언(implementation-design §2.1 기반)
 - `app/src/main/java/com/example/ebikepulse/MainActivity.kt`: 루트 앱/네비게이션 호스팅
-- (신규) `.../EbikePulseApplication.kt`, `.../navigation/`*, `.../ui/*`, `.../di/*`, `.../ride/*`, `.../data/*`
+- (신규) `.../EbikePulseApplication.kt`, `.../di/*`, `.../data/*`
 
 ## 다음 요청 예시(이 문서 기반으로 단계별 실행)
 
-- “`docs/project-bootstrap-plan.md`의 **1단계만** 구현해줘”
-- “2단계(MVI 최소) 진행해줘. 라이딩 화면만.”
+- “`docs/project-bootstrap-plan.md`의 **3단계만** 구현해줘”
 - “3단계(Hilt 세팅) 진행해줘. 주입 확인까지.”
+- “4단계(권한 플로우) 진행해줘.”
 

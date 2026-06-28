@@ -1,7 +1,7 @@
 # EbikePulse — 기술 스택 및 빌드 결정 사항
 
 > 프로젝트 뼈대(0단계)에서 확정한 Gradle·라이브러리·빌드 도구 결정을 기록한다.  
-> 최종 갱신: 2026-06-25
+> 최종 갱신: 2026-06-29
 
 관련 문서:
 - 문서 지도: [`index.md`](index.md)
@@ -19,7 +19,7 @@
 | minSdk / targetSdk / compileSdk | 30 / 37 / 37 |
 | DI | Hilt **2.59.2** |
 | 어노테이션 처리 | **KSP 2.3.9** (`kapt` 사용 안 함) |
-| 상태 관리 패턴 | MVI (코드 적용은 2단계부터) |
+| 상태 관리 패턴 | MVI (2단계: 라이딩 화면 `RideContract`/`RideViewModel` 적용) |
 | 내비게이션 | Navigation Compose **2.9.0** |
 | 로컬 DB | Room **2.7.0** |
 | 위치 | Play Services Location **21.3.0** |
@@ -94,6 +94,7 @@
 | 라이브러리 | 용도 |
 |-----------|------|
 | `lifecycle-viewmodel-ktx` | ViewModel (State/Event 처리) |
+| `lifecycle-viewmodel-compose` | Compose `viewModel()` (3단계 전까지 Hilt 없이 사용) |
 | `lifecycle-runtime-compose` | Compose lifecycle 연동 (`collectAsStateWithLifecycle` 등) |
 
 ### Navigation (1단계에서 사용)
