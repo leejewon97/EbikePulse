@@ -5,4 +5,22 @@
     <string name="tab_ride">라이딩</string>
     <string name="tab_records">기록</string>
     <string name="tab_settings">설정</string>
+
+    <string name="ride_status_idle">대기</string>
+    <string name="ride_status_recording">기록 중</string>
+    <string name="ride_status_paused">일시정지</string>
+    <string name="ride_status_stopping">종료 중</string>
+
+    <string name="ride_start">시작</string>
+    <string name="ride_pause">일시정지</string>
+    <string name="ride_resume">재개</string>
+    <string name="ride_stop">종료</string>
+
+    <string name="ride_pedal_km_label">실페달 km</string>
+    <string name="ride_distance_km_label">주행거리</string>
+    <string name="ride_speed_kmh_label">현재 속도</string>
+
+    <string name="ride_metric_km">%1$.1f km</string>
+    <string name="ride_metric_speed">%1$.1f km/h</string>
+    <string name="ride_elapsed_time">%1$02d:%2$02d</string>
 </resources>
