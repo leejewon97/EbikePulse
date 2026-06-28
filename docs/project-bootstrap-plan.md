@@ -1,6 +1,6 @@
 ---
 title: "EbikePulse 프로젝트 뼈대 생성 실행 계획"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 source_of_truth:
   product_spec: "docs/product-spec.md"
   implementation_design: "docs/implementation-design.md"
@@ -51,10 +51,10 @@ fixed_decisions:
 
 상세 결정 사항: [`technical-decisions.md`](technical-decisions.md)
 
-### 1) 앱 엔트리/내비게이션 골격(탭 IA)
+### 1) 앱 엔트리/내비게이션 골격(탭 IA) ✅
 
-- [ ] 스펙 IA(홈/챌린지/라이딩/기록/설정)대로 **라우트/탭만** 먼저 만든다 — 상세: [implementation-design §3.1](implementation-design.md#31-하단-탭ia-제안)
-- [ ] `MainActivity`는 루트 Composable(`EbikePulseApp`)만 호스팅하도록 단순화
+- [x] 스펙 IA(홈/챌린지/라이딩/기록/설정)대로 **라우트/탭만** 먼저 만든다 — 상세: [implementation-design §3.1](implementation-design.md#31-하단-탭ia-제안)
+- [x] `MainActivity`는 루트 Composable(`EbikePulseApp`)만 호스팅하도록 단순화
 
 - **검증**: 5개 탭 전환이 되고, 각 화면에 placeholder UI가 보임
 
