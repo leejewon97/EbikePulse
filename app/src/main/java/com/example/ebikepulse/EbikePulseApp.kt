@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -22,6 +23,7 @@ import com.example.ebikepulse.ui.records.RecordsScreen
 import com.example.ebikepulse.ui.ride.RideScreen
 import com.example.ebikepulse.ui.settings.SettingsScreen
 
+@Preview
 @Composable
 fun EbikePulseApp() {
     val navController = rememberNavController()
