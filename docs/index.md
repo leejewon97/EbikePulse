@@ -10,6 +10,7 @@
 | 지금까지 확정한 결정 | [product-spec.md §15](product-spec.md#15-확정-사항) | 제품·아키텍처 결정 |
 | MVP 범위 / 이후 기능 | [product-spec.md §9·§16](product-spec.md#9-mvp-minimum-viable-product) | 로드맵 |
 | UI/UX, 화면 구성 | [implementation-design.md §3](implementation-design.md#3-uiux-구체안) | 디자인 단일 소스 |
+| README 화면 목업 (PNG·재생성) | [images/mockups/mockup-spec.md](images/mockups/mockup-spec.md) | README용 목업 SSOT |
 | 권한·포그라운드 서비스 | [implementation-design.md §2](implementation-design.md#2-권한포그라운드-서비스-설계-minsdk-30-기준) | Android 정책·UX |
 | 개발 시 유의/해야/하지 말 것 | [implementation-design.md §1](implementation-design.md#1-개발-가이드-android-중심) | 개발 가이드 |
 | Gradle·라이브러리·빌드 | [technical-decisions.md](technical-decisions.md) | 기술 스택 단일 소스 |

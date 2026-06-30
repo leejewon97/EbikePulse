@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Paparazzi record output (regenerate with recordPaparazziDebug; canonical mockups in docs/images/mockups/)
+app/src/test/snapshots/

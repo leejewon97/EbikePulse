@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.google.ksp)
+    alias(libs.plugins.paparazzi)
 }
 
 android {
@@ -68,10 +69,15 @@ dependencies {
     implementation(libs.androidx.health.connect.client)
 
     testImplementation(libs.junit)
+    testImplementation(libs.paparazzi)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+}
+
+tasks.withType<Test>().configureEach {
+    reports.html.required.set(false)
 }
